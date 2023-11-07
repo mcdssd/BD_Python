@@ -1,0 +1,26 @@
+insert_one_row("test.db", "tabela", "id, name, age", "30, 'samuel', 40")
+
+"""
+create_table(
+    #database_name = 'example.db',
+    #table_name = 'tabela_querida2',
+    #columns = 'id INTENGER PRIMARY KEY, nome_fror TEXT, qtd_petals_fror INTEGER'
+    'test.db',
+    'tabela',
+    """
+    id INTENGER PRIMARY KEY, 
+    name TEXT,
+    age INTENGER NOT NULL
+    """
+)
+
+#########################################################
+import sqlite3
+conn = sqlite3.connect('test.db')
+cursor = conn.cursor()
+
+cursor.execute("""
+    INSERT INTO tabela (id, name, age) VALUES(1, 'Marina', 20)
+""")
+conn.commit()
+"""
